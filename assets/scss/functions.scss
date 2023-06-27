@@ -1,0 +1,3 @@
+@function size($steps) {
+    @return $steps * 0.25rem;
+}

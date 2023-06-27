@@ -1,0 +1,62 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+body {
+    background-color: $colorDarkest;
+    height: 98vh;
+    color: $colorPrimary;
+    font-family: monospace;
+    font-size: $fontSizePrimary;
+}
+
+main {
+    @include flex(center, center);
+    height: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    padding: size(6);
+}
+
+.calculator {
+    border-radius: size(6);
+    background-color: $colorDark;
+    padding: size(2);
+    
+    div {
+        border-radius: size(24);
+        margin: size(1) 0;
+    }
+}
+
+.cell {
+    @include flex(center, center);
+    aspect-ratio: 1;
+    background-color: $colorSecondary;
+    cursor: pointer;
+    user-select: none;
+    margin: size(2) 0;
+
+    &.accent {
+        background-color: $colorAccent;
+        color: $colorDarkest;
+
+        &:active {
+            background-color: darken($colorAccent, 5);
+        }
+    }
+
+    &:active {
+        background-color: darken($colorSecondary, 5);
+    }
+}
+
+#field {
+    @include flex(end, center);
+    aspect-ratio: 4.2;
+    background-color: $colorPrimary;
+    color: $colorDarkest;
+    padding: 0 size(4);
+}

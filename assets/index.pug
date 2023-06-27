@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Calculator
+        link(rel="shortcut icon", href="img/favicon.ico", type="image/x-icon")
+        link(
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        )
+        link(rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css")
+        link(rel="stylesheet" href="css/styles.css")
+        script(src="js/app.js") 
+    body  
+        main 
+            .container
+                .row.center-xs
+                    .col-xs-12.col-md-6.col-lg-4
+                        .calculator.row 
+                            .col-xs-12
+                                #field 
+                            .col-xs-3
+                                .cell(data-type="action" data-value="C") C
+                            .col-xs-3
+                                .cell(data-type="action" data-value="back") &olarr;
+                            .col-xs-3
+                                .cell(data-type="operation" data-value="%") &percnt;
+                            .col-xs-3
+                                .cell(data-type="operation" data-value="/") &divide;
+                            .col-xs-3
+                                .cell(data-type="number" data-value="7") 7
+                            .col-xs-3
+                                .cell(data-type="number" data-value="8") 8
+                            .col-xs-3
+                                .cell(data-type="number" data-value="9") 9
+                            .col-xs-3   
+                                .cell(data-type="operation" data-value="*") &times;
+                            .col-xs-3
+                                .cell(data-type="number" data-value="4") 4
+                            .col-xs-3
+                                .cell(data-type="number" data-value="5") 5
+                            .col-xs-3
+                                .cell(data-type="number" data-value="6") 6
+                            .col-xs-3   
+                                .cell(data-type="operation" data-value="-") &minus;
+                            .col-xs-3   
+                                .cell(data-type="number" data-value="1") 1
+                            .col-xs-3   
+                                .cell(data-type="number" data-value="2") 2
+                            .col-xs-3   
+                                .cell(data-type="number" data-value="3") 3
+                            .col-xs-3   
+                                .cell(data-type="operation" data-value="+") &plus;
+                            .col-xs-3   
+                                
+                            .col-xs-3   
+                                .cell(data-type="number" data-value="0") 0
+                            .col-xs-3   
+                                .cell(data-type="number" data-value=".") .
+                            .col-xs-3
+                                .cell.accent(data-type="action" data-value='equals') &equals;
