@@ -10,6 +10,8 @@ export default class Calculator {
     private static _previousOperand: number;
     private static _operator: string;
     private static _displayUpdate: Function;
+    private static _operators: Array<string> = ["+", "-", "*", "/", "%"];
+    
 
     public static set displayUpdate(displayUpdate: Function) {
         Calculator._displayUpdate = displayUpdate;
@@ -54,6 +56,11 @@ export default class Calculator {
             return;
         }
 
+        if (Calculator._operators.includes(Calculator._displayValue)) {
+            Calculator._displayValue = button.value;
+            return;
+        }
+
         Calculator._displayValue += button.value;
     }
 
@@ -64,7 +71,7 @@ export default class Calculator {
 
         Calculator._operator = button.value;
         Calculator._previousOperand = parseFloat(Calculator._displayValue);
-        Calculator._displayValue = '0';
+        Calculator._displayValue = button.value;
     }
 
     private static actionHandler(button: IButton): void {
@@ -88,6 +95,12 @@ export default class Calculator {
 
     private static calculate(): void {
         Calculator._currentOperand = parseFloat(Calculator._displayValue);
+       
+        if (isNaN(Calculator._currentOperand)) {
+            Calculator._currentOperand = 0;
+        }
+                
+
         let res: number;
 
         switch (Calculator._operator) {
